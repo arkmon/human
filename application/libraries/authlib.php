@@ -11,13 +11,6 @@ class Authlib {
         $this->ci->load->model('user');
  
     }
-    public function login($user,$pwd)
-{
-    if ($user == '' || $pwd == '') {
-        return false;
-    }
-    return $this->ci->user->login($user,$pwd);
-}
  
     public function register($name,$user,$pwd,$conf_pwd)
     {
@@ -29,7 +22,14 @@ class Authlib {
         }
         return $this->ci->user->register($name,$user,$pwd);
     }
-    public function is_loggedin()
+    public function login($user,$pwd)
+{
+    if ($user == '' || $pwd == '') {
+        return false;
+    }
+    return $this->ci->user->login($user,$pwd);
+}
+public function is_loggedin()
 {
     return $this->ci->user->is_loggedin();
 }

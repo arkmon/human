@@ -1,5 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class Auth extends CI_Controller {
  
     function __construct()
@@ -8,38 +7,18 @@ class Auth extends CI_Controller {
         $this->load->library('authlib');
         $this->load->helper('url');
     }
- public function index()
-{
+    public function index()
+    {
     redirect('/auth/login'); // url helper function
-}
+    }
  
-public function register()
-{
+    public function register()
+    {
     $this->load->view('register_view',array('errmsg' => ''));
-}
-public function login()
-{
-    $data['errmsg'] = '';
-    $this->load->view('login_view',$data);
-}
- 
-public function authenticate()
-{
-    $username = $this->input->post('uname');
-    $password = $this->input->post('pword');
-    $user = $this->authlib->login($username,$password);
-    if ($user !== false) {
-        $this->load->view('homepage',array('name' => $user['name']));
-    }
-    else {
-        $data['errmsg'] = 'Unable to login - please try again';
-        $this->load->view('login_view',$data);
     }
  
-}
- 
-public function createaccount()
-{
+    public function createaccount()
+    {
     $name = $this->input->post('name');
     $username = $this->input->post('uname');
     $password = $this->input->post('pword');
@@ -53,14 +32,27 @@ public function createaccount()
         $this->load->view('register_view',$data);
     }
  
+    }
+    public function login()
+{
+    $data['errmsg'] = '';
+    $this->load->view('login_view',$data);
 }
- function logout()
-
- {
-
-   $this->session->sess_destroy();
-
-   redirect('auth/login');
-
- }    
+ 
+public function authenticate()
+{
+    $username = $this->input->post('uname');
+    $password = $this->input->post('pword');
+    $user = $this->authlib->login($username,$password);
+    if ($user !== false) {
+        $this->load->view('search',array('name' => $user['name']));
+    }
+    else {
+        $data['errmsg'] = 'Unable to login - please try again';
+        $this->load->view('login_view',$data);
+    }
+ 
+}
+ 
+     
 }

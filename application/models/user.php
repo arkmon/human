@@ -20,7 +20,7 @@ class User extends CI_Model {
         $this->db->insert('users',$data);
         return null; // no error message because all is ok
     }
-    function login($username,$pwd)
+function login($username,$pwd)
 {
     $this->db->where(array('username' => $username,'password' => sha1($pwd)));
     $res = $this->db->get('users',array('name'));
@@ -35,10 +35,7 @@ class User extends CI_Model {
     $this->db->insert('logins',array('name' => $row['name'],'session_id' => $session_id));
     return $res->row_array();
 }
-function logout()
-{
-$this->session->sess_destroy();
-}
+ 
 function is_loggedin()
 {
     $session_id = $this->session->userdata('session_id');
