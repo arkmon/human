@@ -7,7 +7,15 @@
 <h2>User details</h2>
 <div class='user'>
 <div class='username'>
-<span class='columname'>Username</span> <span><?php echo $dept['dept'] ?></span>
+<span class='columname'>Username</span> 
+<span>
+<?php 
+foreach ($res as $key => $value) {
+	# code...
+}
+echo $key['firstname'] ?>
+
+</span>
 </div>
 
 </div>

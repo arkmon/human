@@ -14,9 +14,13 @@ class Find extends CI_Controller
  
     function findemp()
     {
-        $dept = $this->input->post('dept');
-        $data = $this->student->getById($dept);
-        // just for brevity, we'll echo the result here - you should use a view!
-        $this->load->view('user_details',$data);
-    }
+        $firstname =$this->input->get('firstname');
+       $lastname =$this->input->get('lastname');
+       $department =$this->input->get('dept');
+       $jobtitle =$this->input->get('jobtitle');
+       
+       $firstname = $this->employee_model->getsearch($firstname,$lastname,$department,$jobtitle);
+       $this->load->view('user_details', $firstname);
+      // echo json_encode($firstname);    
+   }
 }
