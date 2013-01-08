@@ -66,9 +66,9 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="http://www.ecwm604.us/w1291692">Home</a></li>
-              <li><a href="http://www.ecwm604.us/w1291692/index.php/find">Search</a></li>
+              <!--<li><a href="http://www.ecwm604.us/w1291692/index.php/find">Search</a></li> -->
               <li><a href="#help">Help</a></li>
-              <li><a href="http://www.ecwm604.us/w1291692/index.php/auth/">Login</a></li>
+              <li><a href="https://www.ecwm604.us/w1291692/index.php/auth/">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -77,14 +77,42 @@
     
 <div id="wrap">
     <div class="container">
-	<div class="page-header">
-      <h1>Bootstrap starter template</h1>
-      </div>
-      <p class="lead">Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+	       <div class="page-header">
+                 <h1>Welcome, search for the user</h1></div>
+      <p class="lead">
+        <div><form action="" method="GET">
+                <div>
+                    <div>First name:         <input type=text id="fn" name='firstname'> </div>
+                    <div>Last name:          <input type=text id="ln" name='lastname'> </div>
+                    <div>Department:    <select type="text" id="dt" name="dept">
+            <option value="">Select Department</option>
+                            <option value="Customer Service">Customer Service</option>
+                            <option value="Development">Development</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Production">Production</option>
+                            <option value="Quality Management">Quality Management</option>
+                            <option value="Research">Research</option>
+                            <option value="Sales">Sales</option>
+                    </select> </div>
+                    <div>Job Title:  <input type=text id="jt"name='jobtitle'> </div>
+                    
+                    <div><input value="Search" type="submit" id="search"></div>
+                    </div>
+                     
+                    
+                    
+                    
+   </form></div></p>
 
     </div>
+  </div>
+
      
-     </div>
+    
+
+
      <div id="push"></div>
     <div id="footer">
         <div class="container">
