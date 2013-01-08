@@ -3,11 +3,11 @@
 
 <head>
     <title>Human Resources</title>
-    
+     <script language="javascript" src="/js/jquery.js"></script>
   </head>
   <body>
-   
-	<form action="w1291692/index.php/find" method="GET">
+    <div class="row">
+	<form action="" method="GET">
                 <div>
                     <div>First name:         <input type=text id="fn" name='firstname'> </div>
                     <div>Last name:          <input type=text id="ln" name='lastname'> </div>
@@ -25,9 +25,9 @@
                     </select> </div>
                     <div>Current job Title:  <input type=text id="jt"name='jobtitle'> </div>
                     
-                    <div><input value="Search" name="submit "type="submit" id="search"></div>
+                    <div><input value="Search" type="submit" id="search"></div>
                     </div>
-                     
+                     </div>
                     
                     
                     
@@ -35,8 +35,8 @@
    <div id="result" class="row"></div>
    <script language="javascript">
     $('#search').click(function() {
-        $.get("index.php/find/findemp",{firstname : $('#fn').val(),lastname : $('#ln').val(),dept : $('#dt').val(),jobtitle : $('#jt').val() },function(data) {
-// $('#result').html('First name: ' );
+        $.get("findemp",{firstname : $('#fn').val(),lastname : $('#ln').val(),dept : $('#dt').val(),jobtitle : $('#jt').val() },function(data) {
+
             var names = "";
             $.each(data, function(index, element) {
                 if (index > 0) {names;}

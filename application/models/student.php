@@ -8,13 +8,19 @@ class Student extends CI_Model {
  
    
         public function getUsers($firstname,$lastname,$department,$jobtitle) {
-        $this->db->where('first_name',$first_name);
-        $this->db->from('employees');
-        $this->db->join('titles');
-        $this->db->join('dept_emp');
-        $this->db->join('departments');
-        $res = $this->db->get();
+            if ($lastname!=''){  $this->db->where('last_name',$lastname);}
+         if ($department!=''){  $this->db->where('dept_name',$department);}
+          if ($jobtitle!=''){  $this->db->where('title',$jobtitle);}
+        $this->db->where('first_name',$firstname);
+        $this->db->from('employees',10,20);
+       $this->db->join('titles', 'titles.emp_no = employees.emp_no');
+      $this->db->join('dept_emp', 'dept_emp.emp_no = employees.emp_no');
+      $this->db->join('departments', 'departments.dept_no = dept_emp.dept_no');
+       
+       $res = $this->db->get();
         $result= $res->result_array();
+         $data1['count'] = count($result);
+        $data1['results'] = $result;
         return $result;
   }
         

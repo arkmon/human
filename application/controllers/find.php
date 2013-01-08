@@ -19,8 +19,9 @@ class Find extends CI_Controller
        $department =$this->input->get('dept');
        $jobtitle =$this->input->get('jobtitle');
        
-       $firstname = $this->employee_model->getsearch($firstname,$lastname,$department,$jobtitle);
-       $this->load->view('user_details', $firstname);
-      // echo json_encode($firstname);    
+       $firstname = $this->employee_model->getUsers($firstname,$lastname,$department,$jobtitle);
+       
+       echo json_encode($firstname);    
+       //$this->load->view('user_details', $firstname);
    }
 }

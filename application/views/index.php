@@ -68,7 +68,7 @@
               <li class="active"><a href="http://www.ecwm604.us/w1291692">Home</a></li>
               <li><a href="http://www.ecwm604.us/w1291692/index.php/find">Search</a></li>
               <li><a href="#help">Help</a></li>
-              <li><a href="#Login">Login</a></li>
+              <li><a href="http://www.ecwm604.us/w1291692/index.php/auth/">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
